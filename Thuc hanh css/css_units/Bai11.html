@@ -1,0 +1,15 @@
+<!--Ở bài #1, F8 đã đưa ra ví dụ về đặt width theo đơn vị %. Thực tế, thuộc tính height đặt theo % cũng hoạt động tương tự, tuy nhiên các bạn cần chú ý một chút để tránh hiểu nhầm.
+
+Hãy nhớ, thuộc tính width và height, khi đặt theo % sẽ tỉ lệ vào thẻ mà nó phụ thuộc, mặc định là thẻ cha trực tiếp của nó. Vì vậy, thẻ cha của nó phải có kích thước cho width hoặc height thì thẻ con đặt theo % mới có tác dụng.
+
+Với chiều rộng thì các thẻ như body, div sẽ mặc định có width: 100%. Vì vậy, ở bài #1 các bạn mà comment thuộc tính width của .box1 lại, bạn sẽ thấy nó chiếm 100% chiều rộng.
+Với chiều cao, mặc định các thẻ có height: auto, chiều cao sẽ tự động thay đổi khi nội dung bên trong nó tăng lên. Nếu thẻ cha có height: auto và thẻ con của nó height: 50% thì sẽ không có tác dụng, khi ấy thẻ con vẫn có height: auto.
+👉 Vì vậy, để một thẻ có thể đặt height theo % thì thẻ nó phụ thuộc phải có một chiều cao mang tính cố định.
+-->
+<div class="parent-1">
+    <div class="box-1">BOX 1</div>
+</div>
+
+<div class="parent-2">
+    <div class="box-2">BOX 2</div>
+</div>

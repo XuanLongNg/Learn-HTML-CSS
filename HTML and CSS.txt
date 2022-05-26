@@ -1,0 +1,227 @@
+HTML
+**********
+-----Cấu trúc file html:
+<!DOCTYPE html>
+<html>
+	<head>
+	...
+	</head>
+	<body>
+	...
+	</body>
+</html>
+
+-----Các thẻ html:
+1. <h1></h1>,<h2></h2>: Thẻ tiêu đề,font chữ giảm từ h1->h6, hiển thị tiêu đề đoạn văn
+2. <p></p>: Thẻ đoạn văn, hiện thị nội dung đoạn văn
+3. <img scr="Link ảnh" alt="Tiêu đề ảnh>: thẻ hình ảnh, hiển thị hình ảnh
+4. <a href="Link"></a>: Thẻ liên kết, gắn link vào văn bản
+5. <ul>
+	<li></li>
+	...
+	<li></li>
+   </ul>: 
+Hiện thị đa văn bản dạng danh sách.
+Với ul là hiển thị dấu chấm đầu mỗi văn bản.
+    li là hiển thị số đầu mỗi văn bản.
+6.<table>
+	<thead>
+		<th></th>
+		...
+		<th></th>
+	</thead>
+	<tbody>
+		<tr>
+			<td></td>
+			...
+			<td></td>
+		</tr>
+		...
+	</tbody>
+Hiện thị đa văn bản dạng bảng.
+7.<input> : tạo nguồn
+Eg: <input type="text">: tạo ô nhập văn bản (giống thanh google search)
+    <input type="checkbox">: tạo ô tích(ô vuông giống tích đúng sai)
+    <input type="radio">: tạo ô tròn( giống nút bấm trong radio)
+8.<button></button>: tạo nút văn bản (giống như ô đăng kí,đăng nhập)
+9.<div>
+  ...
+  </div>
+Khoang vùng ô.
+
+-----Attribute: thuộc tính của thẻ
+Thêm thuộc tính vào trong mỗi thẻ
+Eg: <h1 title="đây là tiêu đề"></h1>
+với title="đây là tiêu đề" chính là thuộc tính của thẻ h1
+-------------------------------------------------------------------------------------
+CSS trong html
+**********
+-----CSS internal:
+- Sử dụng css trong file html.
+csd: <style></style>
+vd: 	<style>
+		h1 {
+			color: red;
+		}
+	</style>
+đôi tất cả văn bản trong thẻ h1 thành màu đỏ.
+
+-----CSS external:
+-Tạo riêng 1 file css để sử dụng file html.
+csd: tạo 1 file css. Sau đó gắn link file css đó bằng cách sử dụng <link rel="stylesheet" href="nguồn file css">
+
+-----CSS inline:
+- Sử dụng attribute style trong thẻ.
+csd: <thẻ style="";"">
+vd:	<h1 style="coler: red;font-size: 16px"></h1>
+
+-----CSS selectors:
+- là các cách chúng ta sử dụng để chọn ra các phần tử (elements) mà chúng ta muốn “style” cho chúng. Có 2 CSS selectors thân thuộc với chúng ta nhất là id và class.
+	* id: là tên phân biệt, mỗi id chỉ sử dụng cho duy nhất 1 thẻ.
+		csd: <thẻ id="tên id">
+			eg: 	<h1 id="head">a</h1>
+				<h1 id="head1">a</h1>
+			    	...
+			    	<style>
+					#head{
+						color: red;
+					}
+					#head1{
+						color: blue;
+					}
+				</style>
+	* class: là lớp phân biệt, mỗi tên class có thể dủng cho nhiều thẻ.
+		csd: <thẻ 0 class="tên lớp">
+		     <thẻ 1 class="tên lớp">
+			eg:	<h1 class="lop1"></h1>
+				<h2 class="lop1"></h2>
+				...
+				<style>
+					.lop1{
+						color: red;
+					}
+				</style>
+
+Bảng tra cứu css selectors:
+____________________________________________________________________________________________________________________________
+|Selector			|Ví dụ		|Mô tả												   									   |
+|_______________________|_________________|________________________________________________________________________________|
+|.class			        |.intro			  |Chọn tất cả các thẻ có class=“intro”							   				   |
+|.class1.class2			|.name1.name2	  |Chọn tất cả các thẻ có cả name1 và name2 được đặt trong thuộc tính class của nó |
+|.class1 .class2		|.name1 .name2	  |Chọn tất cả các thẻ có class=“name2” là con của một phần tử có class=“name1”    |
+|*						|*				  |Chọn tất cả các thẻ										   					   |
+|element				|h2				  |Chọn tất cả các thẻ h2										   				   |
+|element.class			|div.box		  |Chọn tất cả thẻ div có class=“box”								               |
+|element, element		|div, h2		  |Chọn tất cả thẻ div và h2									   				   |
+|element element		|div p 		      |Chọn tất cả thẻ p trong thẻ div								       			   |
+|element > element 		|div > p		  |Chọn tất cả thẻ p là con trực tiếp của thẻ div                                  |
+|element + element		|div + p		  |Chọn thẻ p đứng liền kề sau thẻ div							   				   |
+|element ~ element		|div ~ p		  |Chọn tất cả thẻ p đứng sau thẻ div                                              |
+|_______________________|_________________|________________________________________________________________________________|
+
+-----Độ ưu tiên trong css:
+1.	important>inline>#id>.class>tag
+2.	internal và external có độ ưu tiên như nhau=> cái nào viết sau sẽ dc ưu tiên.
+
+-----Biến trong css:
+csd: --tên biến: ;
+Eg:
+	1. sử dụng root (toàn cục)
+:root{
+	--text-color: red;
+}
+h1{
+	color: var(--text-color);
+}
+	2. sử dụng trong chính thẻ. (cục bộ)
+h1{
+	--text-color: red;
+	color: var(--text-color);
+}
+
+-----Đơn vị trong css(css units):
+1.	tuyệt đối(Absolute units):
+Là các đơn vị không đổi dù thay đổi bất kì kích thước gì ở trang web(không phải thay đổi code)
+	px: 1px = 1 điểm ảnh
+chưa học
+	pt:
+	cm:
+	mm:
+	inch:
+	pc:
+2.	tương đối(relative units):
+Là các đơn vị tương đối của trang web, sẽ thay đổi kích thước theo thứ phụ thuộc.
+	%: phụ thuộc vào thẻ chứa nó
+	rem: phụ thuộc vào kích thước thẻ html. vd: html=50px thì 1rem=50px
+  	em: phụ thuộc vào thẻ gần nhất chứa nó.
+	vw: phụ thuộc vào độ rộng trình duyệt theo chiều ngang
+	vh: phụ thuộc vào độ rộng trình duyệt theo chiều dọc
+3.	margin: canh lề cho các thành phần.
+4. 	padding: thêm khoảng không giữa các thành phần.
+-----CSS Function:
+1.	var: hàm gọi thuộc tính đã được định nghĩa từ trước. vd như biến.
+	csd: var(thuộc tính);
+2.	linear-gradient:
+3.	rbga: hàm tạo màu
+	csd: rbga(0,0,0,0);
+4.	rbg: hàm tạo màu, không thể tạo màu trong suốt
+	csd: rbg(0,0,0);
+5.	calc: hàm tính toán +-*/.
+	csd: calc(120px+10px);
+6.	attr: hàm thuộc tính của thẻ bằng cách sử dụng lớp giả.
+	csd: a::after(or before){
+				content: attr(thuộc tính):
+		}
+-----lớp giả (CSS pseudo classes):
+sử dụng dấu : trước mỗi lớp giả
+1.	root: lớp giả sẽ tham chiếu tới phần tử gốc của file html
+2.	hover: định nghĩa được vô số thuộc tính css nhưng chỉ kích hoạt khi di chuột vào nó.
+3.	active: định nghĩa được vô số thuộc tính css nhưng chỉ kích hoạt khi kích chuột vào nó.
+4.	first-child:
+	last-child:
+	lấy được phần tử đầu tiên hoặc cuối cùng của Thẻ
+-----Phần tử giả (CSS pseudo elements):
+sử dụng dấu :: trước mỗi phần tử giả:
+1.	before: phần tử giả này sẽ đứng đầu tất cả các thẻ div
+2.	after: phần tử giả này sẽ đứng sau tất cả các thẻ div
+3.	first-letter: CSS chữ cái đầu trong thẻ
+4.	first-line: CSS dòng đầu tiên trong thẻ
+5. 	selection: khi bôi đen mới kích hoạt
+-----Đệm - Viền - Khoảng lề:
+1.	padding: đệm thêm(tăng) kích thước của khối
+2.	border: tạo viền của khối
+3.	margin: tạo khoảng lề cho khối mà không tăng kích thước của khối
+4. 	box-sizing: tự động tính toán khối khi thêm 3 thuộc tính trên về size ban đầu khai báo
+-----Thuộc tính tạo nền:
+1. 	background-color: thuộc tính tạo màu nền.
+	+) background-clip: đồ màu nền từ box tùy chọn.(vd: đổ từ box padding)
+2.	background-image: tạo ảnh nền.
+	+) background-origin: đẩy ảnh từ box tùy chọn.(vd: từ box border)
+3.	background-repeat: lặp lại kích thước nền.
+4. 	background-size: kích thước nền.
+	+) contain: lấy chiều dài nhất và hiện nền k bị cắt ảnh và k bao phủ toàn bộ thẻ html.
+	+) cover: lấy chiều dài nhất và hiện nền có thể bị cắt ảnh và bao phủ toàn bộ thẻ html.
+5.  background-position: đặt vị trí ảnh nền.
+*) shorthand: 
+	background: color - image - repeat - position/position/... ;
+-----Thuộc tính vị trí:
+1.	Relative: vị trí tương đối, không phụ thuộc.
+2.	Absolute: vị trí tuyệt đối, phụ thuộc vào thẻ cha có thuộc tính position gần nhất.
+3.	Fixed: vị trí tuyệt đối, phụ thuộc vào cửa sổ trình duyệt.
+4.	Sticky: vị trí tuyệt đối, phụ thuộc vào cửa sổ trình duyệt và lăn chuột.
+-----Một số trick và tip:
+1. 	Căn giữa: 
+	text-align - căn theo chiều ngang. 
+	line-height - căn theo chiều dọc.
+Các thẻ con kế thừa cha	
+	display: flex + margin: auto - căn giữa cả 2 chiều
+				  + justify-content: center
+				  					 space-around
+									 space-between
+	transform: translate(chiều dài,chiều cao)
+2. 	Hiển thị ảnh dự phòng khi ảnh lỗi:
+	*1) <img onerror="this.src ='/nguồn code/tên ảnh" src="Ảnh gốc">
+	Chỉ sử dụng với thẻ img
+	*2) background-image: url="Ảnh gốc", url="Ảnh dự phòng";
+	chỉ sd với thuộc tính background-image.
+

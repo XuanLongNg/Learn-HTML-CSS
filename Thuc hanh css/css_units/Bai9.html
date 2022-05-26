@@ -1,0 +1,34 @@
+<!--
+Ở bài trước, chắc hẳn một số bạn sẽ nhìn ra, có một khoảng trắng bị dư ra phải không?
+
+Thắc mắc: Rõ ràng BOX 4 width: 100% rồi sao lại dư ra như vậy?
+
+Lý do
+Trên trình duyệt được đặt sẵn một số thuộc tính CSS mặc định, trong đó có thuộc tính margin, đây là thuộc tính tạo ra một khoảng cách giữa các thẻ. Cụ thể trong tình huống trên, thẻ body mặc định có margin: 8px, vì vậy body đang đẩy ra xung quanh 8px và gây ra hiện tượng trên.
+
+Chương sau, các bạn sẽ được học về thuộc tính margin.
+
+Cách khắc phục
+Không chỉ thẻ body, một số thẻ thông dụng như h1-h6, p cũng có margin mặc định. Trong thực tế, điều này thường tạo ra những khoảng trắng ngoài ý muốn. Để khắc phục chúng ta sẽ Reset CSS bằng cách sau:
+
+👉 Sử dụng * selector, vì nó tác động lên mọi thẻ, vì vậy chúng ta có thể reset cho mọi thẻ:
+
+* {
+    margin: 0; /* Loại bỏ margin mặc định */
+    padding: 0; /* Loại bỏ padding mặc định */
+}
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ví dụ sử dụng đơn vị % #1</title>
+    <link rel="stylesheet" href="Bai9.css">
+</head>
+<body>
+    <div class="box box1">BOX 1</div>
+    <div class="box box2">BOX 2</div>
+    <div class="box box3">BOX 3</div>
+    <div class="box box4">BOX 4</div>
+</body>
+</html>

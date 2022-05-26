@@ -1,4 +1,3 @@
-style
 p{
     color: turquoise;
 }
@@ -7,4 +6,7 @@ p{
 }
 #gt{
     color: palegoldenrod;
+}
+html{
+    font-size: 100%;
 }
